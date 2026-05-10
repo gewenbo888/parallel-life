@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parallel Life · 平行人生 — The lives you would have lived</title>
+
+<meta name="description" content="Parallel Life simulates the version of you born into another era and another place — career, relationships, status, emotional weather, and the death scenario most likely to find you there.">
+<meta name="keywords" content="alternate history, counterfactual, parallel lives, AI simulation, biography generator, psychology, 平行人生, 反事实">
+<meta name="author" content="Gewenbo">
+<link rel="canonical" href="https://parallel-life.psyverse.fun/">
+<link rel="alternate" hreflang="en" href="https://parallel-life.psyverse.fun/">
+<link rel="alternate" hreflang="zh-CN" href="https://parallel-life.psyverse.fun/">
+<link rel="alternate" hreflang="x-default" href="https://parallel-life.psyverse.fun/">
+<meta property="og:title" content="Parallel Life — The lives you would have lived">
+<meta property="og:description" content="Five eras, eight places, five life dimensions, one counterfactual generator.">
+<meta property="og:url" content="https://parallel-life.psyverse.fun/">
+<meta property="og:site_name" content="Psyverse">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Parallel Life">
+<meta name="twitter:description" content="The lives you would have lived.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#5b8df0">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='5' fill='%2314141f'/><path d='M16 6 L26 16 L16 26 L6 16 Z' fill='none' stroke='%235b8df0' stroke-width='1.6'/><path d='M16 11 L21 16 L16 21 L11 16 Z' fill='%23e8a14a'/></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Karla:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;500;600&family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+
+<script src="https://analytics-dashboard-two-blue.vercel.app/tracker.js" defer></script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">
+        <span lang="en">Parallel Life</span>
+        <span lang="zh">平行人生</span>
+      </span>
+    </a>
+    <div class="nav-links">
+      <a href="#dimensions"><span lang="en">Dimensions</span><span lang="zh">维度</span></a>
+      <a href="#sim"><span lang="en">Simulator</span><span lang="zh">模拟器</span></a>
+      <a href="#counterfactual"><span lang="en">Counterfactual</span><span lang="zh">反事实</span></a>
+    </div>
+    <div class="nav-ctrl">
+      <button class="btn" id="lang-btn">EN</button>
+      <button class="btn" id="theme-btn">◐</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow"><span lang="en">Counterfactual · Eight Places · Five Eras</span><span lang="zh">反事实 · 八个地点 · 五个时代</span></div>
+      <h1 class="display">
+        <span lang="en">The you that <em>almost was.</em> The thousand others <em>that nearly were.</em></span>
+        <span lang="zh">那个<em>差点就是</em>的你。那一千个<em>几乎成为</em>的你。</span>
+      </h1>
+      <p class="lede">
+        <span lang="en">Pick an era and a place. The simulator runs your same body and same starting endowments through that world's economy, kinship structure, and mortality field, and returns a five-dimension life: career, relationships, status, emotional weather, and the death scenario most likely to find you there.</span>
+        <span lang="zh">挑一个年代和一个地点。模拟器把你的同一身体、同一初始禀赋，跑过那个世界的经济、亲缘结构与死亡场，返回一段五维度的人生：职业、关系、地位、情绪气候，以及那里最可能找到你的死亡情境。</span>
+      </p>
+      <div class="tags">
+        <span class="tag">era picker</span>
+        <span class="tag">place picker</span>
+        <span class="tag">five life dimensions</span>
+        <span class="tag">EN · 中文</span>
+      </div>
+    </div>
+    <div class="timeline-viz" id="timeline-viz"></div>
+  </div>
+</header>
+
+<section id="dimensions">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">P1 · Five Life Dimensions</div>
+      <h2><span lang="en">Five things every era and place changes. <em>The first three are obvious. The last two are the ones that bite.</em></span><span lang="zh">每个年代与地点都会改变的五件事。<em>前三项显而易见，后两项才是真咬人的。</em></span></h2>
+      <p class="sec-lede"><span lang="en">A counterfactual life is not a costume change. It's a different distribution over career attractors, mate selection, status mobility, dominant affect, and likely cause of death. Most popular alternate-history media misses the last two.</span><span lang="zh">反事实人生不是换戏装。它是职业吸引子、配偶选择、地位流动性、主导情感与可能死因之上的不同分布。多数大众平行历史媒体遗漏了后两项。</span></p>
+    </div>
+    <div class="grid c5" id="dim-grid"></div>
+  </div>
+</section>
+
+<section id="sim">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">P2 · The Simulator</div>
+      <h2><span lang="en">Pick an era. Pick a place. <em>Pick a starting endowment.</em></span><span lang="zh">挑一个年代。挑一个地点。<em>挑一项初始禀赋。</em></span></h2>
+      <p class="sec-lede"><span lang="en">5 eras × 8 places × 4 endowments = 160 scenarios. Output is a short five-dimension biography. Honesty: this is a generator running templated narratives — not a frontier-model biography engine.</span><span lang="zh">5 个年代 × 8 个地点 × 4 种禀赋 = 160 种情境。输出是一段简短的五维度小传。坦诚：这是一台跑模板叙事的生成器——不是前沿模型的小传引擎。</span></p>
+    </div>
+    <div class="sim-lab">
+      <div class="controls">
+        <div>
+          <label><span lang="en">Era</span><span lang="zh">年代</span></label>
+          <select id="s-era">
+            <option value="song">Song Dynasty China · 1100</option>
+            <option value="ottoman">Ottoman Constantinople · 1620</option>
+            <option value="meiji">Meiji Tokyo · 1880</option>
+            <option value="soviet">Late Soviet Moscow · 1980</option>
+            <option value="future" selected>Mars Colony · 2120</option>
+          </select>
+        </div>
+        <div>
+          <label><span lang="en">Place</span><span lang="zh">地点</span></label>
+          <select id="s-place">
+            <option value="capital" selected>Capital city</option>
+            <option value="port">Port city</option>
+            <option value="border">Border garrison</option>
+            <option value="village">Inland village</option>
+            <option value="monastery">Religious institution</option>
+            <option value="frontier">Frontier settlement</option>
+            <option value="university">University town</option>
+            <option value="market">Market town</option>
+          </select>
+        </div>
+        <div>
+          <label><span lang="en">Starting endowment</span><span lang="zh">初始禀赋</span></label>
+          <select id="s-endow">
+            <option value="literate">Literate, modest means</option>
+            <option value="merchant" selected>Merchant household</option>
+            <option value="craft">Skilled artisan</option>
+            <option value="peasant">Land-bound peasant</option>
+          </select>
+        </div>
+      </div>
+      <button class="go" id="sim-go"><span lang="en">Run simulation</span><span lang="zh">运行模拟</span></button>
+      <div class="sim-out" id="sim-out"></div>
+    </div>
+  </div>
+</section>
+
+<section id="counterfactual">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">P3 · Counterfactual Engine</div>
+      <h2><span lang="en">Five canned counterfactuals plus a free-text fallback.</span><span lang="zh">五个预设反事实 + 自由文本回退。</span></h2>
+      <p class="sec-lede"><span lang="en">Each probe answers one well-defined "what if" — including the harder ones the genre usually avoids. The free-text box runs a heuristic, not a frontier model.</span><span lang="zh">每个探针回答一个定义明确的"如果"——包括类型常回避的那些较难问题。自由文本框跑启发式，不跑前沿模型。</span></p>
+    </div>
+    <div class="mirror-wrap">
+      <div class="prompt-grid" id="prompt-grid"></div>
+      <div class="mirror-input">
+        <textarea id="mirror-input" placeholder="e.g. 'What would my life look like if I had been born in 1940 Shanghai?'"></textarea>
+        <button id="mirror-go"><span lang="en">Project</span><span lang="zh">投射</span></button>
+      </div>
+      <div class="mirror-out" id="mirror-out"></div>
+    </div>
+  </div>
+</section>
+
+<section id="rails">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">P4 · Guardrails</div>
+      <h2><span lang="en">What this simulator refuses to pretend.</span><span lang="zh">本模拟器拒绝伪装的事。</span></h2>
+    </div>
+    <div class="rails">
+      <h3><span lang="en">Five things Parallel Life will not do.</span><span lang="zh">平行人生不会做的五件事。</span></h3>
+      <ul>
+        <li><span lang="en"><strong>No utopian determinism.</strong> Every era is generated with realistic mortality, status ceilings, and constraint cost. The Song Dynasty was beautiful; it was also a place where most lives ended young. We won't pretend otherwise.</span><span lang="zh"><strong>不做乌托邦决定论。</strong>每个年代都按现实的死亡率、地位上限与约束代价生成。宋代是美丽的；它也是大多数生命过早结束的地方。我们不假装相反。</span></li>
+        <li><span lang="en"><strong>No nationalist romance.</strong> The simulator does not glorify any particular era or polity. Empires fall; people grieve in every generation. The narratives are written from inside the constraint, not above it.</span><span lang="zh"><strong>不做民族主义浪漫。</strong>模拟器不美化任何特定年代或政体。帝国会陨落，每一代都有人哀伤。叙事是在约束之内书写的，不在其之上。</span></li>
+        <li><span lang="en"><strong>No "the past was better" framing.</strong> The simulator also refuses the inverse: "the future is unambiguously better." Both are stories. The data is messier.</span><span lang="zh"><strong>不做"过去更好"框架。</strong>模拟器也拒绝其反向："未来无疑更好"。两者都是故事，数据更乱。</span></li>
+        <li><span lang="en"><strong>No identity flattening.</strong> Counterfactual lives change everything but the body. The site won't pretend that being born in Tokyo 1880 is "still the same you in different clothes" — most of what you are now is downstream of your particular constraint set.</span><span lang="zh"><strong>不做身份扁平化。</strong>反事实人生改变除身体以外的一切。本站不假装出生于 1880 年东京"仍是穿着不同衣服的你"——你现在的大部分是你特定约束集的下游。</span></li>
+        <li><span lang="en"><strong>No infinite-AI-generation slop.</strong> 160 templated scenarios plus five canned counterfactuals plus one heuristic fallback is better discipline than infinite plausible-sounding LLM biographies.</span><span lang="zh"><strong>不做无限 AI 生成的污水。</strong>160 个模板化情境加五个预设反事实加一个启发式回退，比无穷个貌似合理的 LLM 小传是更好的纪律。</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <span lang="en">Parallel Life · part of the </span>
+    <span lang="zh">平行人生 · </span>
+    <a href="https://psyverse.fun">Psyverse</a>
+    <span lang="en"> portfolio by </span>
+    <span lang="zh"> 投资组合的一部分 · 作者：</span>
+    <a href="https://psyverse.fun">Gewenbo</a>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
